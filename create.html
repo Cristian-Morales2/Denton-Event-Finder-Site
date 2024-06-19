@@ -6,7 +6,8 @@
         <title>Create an Event</title>
 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="../style.css" rel="stylesheet">
+        
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -94,6 +95,28 @@
     </head>
 
     <body class="page-create">
+
+          <header class="top-bar">
+    <div class="dropdown">
+      <button class = "tb-hamburger-button"  onclick = tbDropToggle()>
+      =
+      </button>
+      <div class="dropdown-content" id="tbDropdown">
+        <a href="#home">Dashboard</a>
+        <a href="#account">Account</a>
+        <a href="#settings">Settings</a>  
+        <a href="#account">Create Account</a>
+        <a href="#settings">Log In</a>  
+      </div>
+    </div>
+    <button class = "tb-text-button">Recommended</button>
+    <button class = "tb-text-button">Upcoming</button>
+    <input type="text" placeholder="Search"></input>
+    <button class = "tb-create-button">
+          <a href="#contact">+</a>  
+    </button>
+   </header>
+
 
         <div class="container">
             <h2>Create an Event</h2>
