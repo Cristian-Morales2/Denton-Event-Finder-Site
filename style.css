@@ -103,16 +103,16 @@
 }
 
 .top-bar input[type=text] {
-  height: 80%;
+  height: 60%;
   width: 20%;
   float: right;
   position:relative;
   padding: 6px;
   border: none;
-  color:#BBB;
+  color:#333;
   background-color:#666;
   border-radius: 6px;
-  top: 10%;
+  top: 20%;
   margin-left: 12px;
   font-size: 14px;
 }
