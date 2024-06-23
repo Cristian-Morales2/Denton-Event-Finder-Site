@@ -1,6 +1,9 @@
 
 body{
   margin:0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #181818;
+  color: white;
 }
 
 .top-bar{
@@ -107,7 +110,7 @@ body{
 }
 
 .top-bar input[type=text] {
-  height: 60%;
+  height: 30px;
   width: 20%;
   float: right;
   position:relative;
