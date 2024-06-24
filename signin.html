@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <html lang="eng">
+        <head>
+            <meta charset="utf-8">
+            <meta name=""viewport" content="width=device-width, initial-scale-1">        
+		<script src="../topbar.js"></script>
+        	<link href="../style.css" rel="stylesheet">
+            <style>
+            	body {
+                  font-family: Arial, Helvetica, sans-serif;
+                  background: #181818;
+                  color: white;
+                  text-align: center;
+                  
+				}	
+
+                .account_container{
+                    content-adjust:center;
+                    justify-content:center;
+                    align-items:center;
+                    display:flex;
+                    flex-direction:column;
+               	}
+
+                .account_container a[href]{
+                    margin-top:10px
+                }
+
+                .account_creation{
+                	width:max-content;
+                	align-items:left;
+                    text-align:left;
+                    justify-content:center;
+                    display:flex;
+                    flex-direction: column;
+                	margin-top:100px;
+
+				}
+                .account_creation input{
+                    margin-top:5px;
+                    margin-bottom:10px;
+           			width:200px;
+                }
+                .input_header{
+           			font-weight:bold;
+                }
+                .register_submit{
+                	height: 40px;
+                    width: 120px;
+                    
+                    margin-top:10px;
+                    outline:none;
+                    border:0;
+                    
+                    font-weight:bold;
+                    color:white;
+                    background:#00A0A0;
+                    border-radius:16px;
+                }
+                .register_submit:hover{
+                    background:#00C0C0;
+                }
+                .register_submit:active{
+                    background:#005050;
+                }
+                
+                .error_message{
+                	display: none;
+                	margin-top:15px;
+                    font-weight:normal;
+                	color:red;
+                }
+                
+            </style>
+            <title>
+                Sign Up
+            </title>
+        </head>
+        <body class="page-signup">
+	<header class="top-bar">
+	    <div class="dropdown">
+	      <button class = "tb-hamburger-button"  onclick = tbDropToggle()>
+	      =
+	      </button>
+	      <div class="dropdown-content" id="tbDropdown">
+	        <a href="index.html">Dashboard</a>
+	        <a href="#account">Account</a>
+	        <a href="#settings">Settings</a>  
+	        <a href="signup.html">Create Account</a>
+	        <a href="#Log In">Log In</a>  
+	      </div>
+	    </div>
+	    <button class = "tb-text-button">Recommended</button>
+	    <button class = "tb-text-button">Upcoming</button>
+	    <input type="text" placeholder="Search"></input>
+	    <button class = "tb-create-button">
+	          <a href="create.html">+</a>  
+	    </button>
+	   </header>
+
+        <div class="account_container">
+            <div class="account_creation">
+                <a class = "input_header">Username</a>
+                <input id="username_field" required>
+                <a class = "input_header">Password</a>
+                <input type="password" id="password_field" required>
+
+
+
+            </div>            
+            <button class = "register_submit">Log in</button>
+            <a class = "error_message" id = "incorrect_pass">Password is incorrect</a>
+	        <a href="#passwordforgot">Forgot password</a>
+	        <a href="signup.html">Create an account</a>
+
+
+
+
+            </div>
+            
+        </body>
