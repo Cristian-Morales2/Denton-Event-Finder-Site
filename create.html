@@ -94,41 +94,34 @@
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
     </head>
-
-        <body class="page-create">
-            <header class="top-bar">
-                <div class="dropdown">
-                  <button class = "tb-hamburger-button"  onclick = tbDropToggle()>
-                      =
-                      </button>
-                          <div class="dropdown-content" id="tbDropdown">
-                            <a href="index.html">Dashboard</a>
-                            <a href="#account">Account</a>
-                            <a href="#settings">Settings</a>  
-                            <a href="signup.html">Create Account</a>
-                            <a href="#Log In">Log In</a>  
-                          </div>
-                </div>
-            <button class = "tb-text-button">Recommended</button>
-            <button class = "tb-text-button">Upcoming</button>
-            <input type="text" placeholder="Search"></input>
-            <button class = "tb-create-button">
-                  <a href="create.html">+</a>  
-            </button>
-   </header>
     <body>
-        <div class="container">
-        <h1>Create an Event</h1>
-        <input type="text" placeholder="Event Title">
-        <textarea rows="4" placeholder="Description"></textarea>
-        <input type="text" placeholder="Address">
-        <div class="row">
-            <input type="text" placeholder="Date Description">
-            <input type="date" value="2025-06-25">
-            <input type="time" value="12:00">
+    <div class="container">
+        <h1>Event Creator</h1>
+        <div class="form-group">
+            <label for="event-title">Event Title</label>
+            <input type="text" id="event-title" placeholder="Event Title">
         </div>
-        <div class="image-selector">Select Images</div>
-        <button class="confirm-btn">Create Event</button>
-    </body>
+        <div class="form-group">
+            <label for="event-description">Description</label>
+            <textarea id="event-description" rows="5" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="event-address">Address</label>
+            <input type="text" id="event-address" placeholder="Address">
+        </div>
+        <div class="form-group">
+            <label for="event-date-description">Date Description</label>
+            <input type="text" id="event-date-description" placeholder="Date Description">
+        </div>
+        <div class="form-group">
+            <label for="event-date">Date</label>
+            <input type="date" id="event-date">
+            <label for="event-time" style="margin-left: 10px;">Time</label>
+            <input type="time" id="event-time">
+        </div>
+        <div class="form-group">
+            <label>Upload Images</label>
+            <div class="upload-container">Select Images</div>
+        </div>
 
 </html>
