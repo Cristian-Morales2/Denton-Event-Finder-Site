@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale-1">
         <title>Create an Event</title>
 
-        <!-- <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../style.css" rel="stylesheet"> -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../style.css" rel="stylesheet">
         
     <style>
         body {
@@ -89,63 +89,45 @@
     </style>
 
     
-    <!-- Custom styles for this template 
+    <!-- Custom styles for this template -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-     Custom styles for this template 
-    <link href="dashboard.css" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
     </head>
 
-    <body class="page-create">
-
-          <header class="top-bar">
-    <div class="dropdown">
-      <button class = "tb-hamburger-button"  onclick = tbDropToggle()>
-      =
-      </button>
-      <div class="dropdown-content" id="tbDropdown">
-        <a href="index.html">Dashboard</a>
-        <a href="#account">Account</a>
-        <a href="#settings">Settings</a>  
-        <a href="signup.html">Create Account</a>
-        <a href="#Log In">Log In</a>  
-      </div>
-    </div>
-    <button class = "tb-text-button">Recommended</button>
-    <button class = "tb-text-button">Upcoming</button>
-    <input type="text" placeholder="Search"></input>
-    <button class = "tb-create-button">
-          <a href="create.html">+</a>  
-    </button>
+        <body class="page-create">
+            <header class="top-bar">
+                <div class="dropdown">
+                  <button class = "tb-hamburger-button"  onclick = tbDropToggle()>
+                      =
+                      </button>
+                          <div class="dropdown-content" id="tbDropdown">
+                            <a href="index.html">Dashboard</a>
+                            <a href="#account">Account</a>
+                            <a href="#settings">Settings</a>  
+                            <a href="signup.html">Create Account</a>
+                            <a href="#Log In">Log In</a>  
+                          </div>
+                </div>
+            <button class = "tb-text-button">Recommended</button>
+            <button class = "tb-text-button">Upcoming</button>
+            <input type="text" placeholder="Search"></input>
+            <button class = "tb-create-button">
+                  <a href="create.html">+</a>  
+            </button>
    </header>
-
-
+    <body>
         <div class="container">
-            <h2>Create an Event</h2>
-
-            <form id="createEventForm">
-
-                <div class="form-group">
-                    <label for="eventName">Event Name</label>
-                    <input type="text" id="eventName" name="eventName" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="eventDescription">Event Description</label>
-                    <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="eventDate">Event Date</label>
-                    <input type="date" id="eventDate" name="eventDate" required>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit">Create Event</button>
-                </div>
-
-            </form>
-
+        <h1>Create an Event</h1>
+        <input type="text" placeholder="Event Title">
+        <textarea rows="4" placeholder="Description"></textarea>
+        <input type="text" placeholder="Address">
+        <div class="row">
+            <input type="text" placeholder="Date Description">
+            <input type="date" value="2025-06-25">
+            <input type="time" value="12:00">
         </div>
+        <div class="image-selector">Select Images</div>
 
     </body>
 
