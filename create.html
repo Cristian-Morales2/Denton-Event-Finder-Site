@@ -188,4 +188,21 @@
         </div>
         <button class="btn-confirm">Confirm</button>
     </div>
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            const imagePreview = document.getElementById('image-preview');
+            imagePreview.innerHTML = '';
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imagePreview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </html>
