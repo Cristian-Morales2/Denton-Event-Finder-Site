@@ -8,7 +8,8 @@
 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../style.css" rel="stylesheet">
-        
+
+    <!-- Style for the event creation page components -->    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -139,32 +140,39 @@
               <a href="create.html">+</a>  
         </button>
        </header>
-        
+
+    <!-- Event Creatin form container -->    
     <div class="container">
         <h1>Event Creator</h1>
         <div class="form-group">
+            <!-- Event Name Text Box -->
             <label for="event-title">Event Title</label>
             <input type="text" id="event-title" placeholder="Event Title">
         </div>
         <div class="form-group">
+            <!-- Event Description Text Box -->
             <label for="event-description">Description</label>
             <textarea id="event-description" rows="5" placeholder="Description"></textarea>
         </div>
         <div class="form-group">
+            <!-- Event Address Text Box -->
             <label for="event-address">Address</label>
             <input type="text" id="event-address" placeholder="Address">
         </div>
         <div class="form-group">
+            <!-- Event Date Description Text Box -->
             <label for="event-date-description">Date Description</label>
             <input type="text" id="event-date-description" placeholder="Date Description">
         </div>
         <div class="form-group">
+            <!-- Event Date and Time Box -->
             <label for="event-date">Date</label>
             <input type="date" id="event-date">
             <label for="event-time" style="margin-left: 10px;">Time</label>
             <input type="time" id="event-time">
         </div>
         <div class="form-group">
+            <!-- Event Image Upload Box -->
             <label>Upload Image</label>
             <div class="upload-container">
                 <span>Select Image</span>
@@ -172,6 +180,7 @@
                 <div id="image-preview"></div>
             </div>
         </div>
+        <!-- Event Tags Boxes -->
         <div class="tag-container">
             <span>Live Music</span>
             <span>Concerts</span>
@@ -205,8 +214,10 @@
             <span>Mexican</span>
             <span>Mediterranean</span>
         </div>
+        <!-- Create Event Button -->
         <button class="btn-confirm">Confirm</button>
     </div>
+    <!-- Script to allow uploading and image -->
     <script>
         document.getElementById('file-input').addEventListener('change', function(event) {
             const imagePreview = document.getElementById('image-preview');
