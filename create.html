@@ -215,10 +215,11 @@
             <span>Mediterranean</span>
         </div>
         <!-- Create Event Button -->
-        <button class="btn-confirm">Confirm</button>
+        <button class="btn-confirm" onclick="createEvent()">Confirm</button>
     </div>
-    <!-- Script to allow uploading and image -->
+    <!-- Scripts-->
     <script>
+        //Function to allow for image uploading on the page
         document.getElementById('file-input').addEventListener('change', function(event) {
             const imagePreview = document.getElementById('image-preview');
             imagePreview.innerHTML = '';
@@ -234,5 +235,80 @@
                 reader.readAsDataURL(file);
             }
         });
+
+        //Function to create the event once the create button is pressed
+        async function createEvent() {
+            //Obtain Event Information
+            const title = document.getElementById('event-title').value;
+            const description = document.getElementById('event-description').value;
+            const address = document.getElementById('event-address').value;
+            const dateDescription = document.getElementById('event-date-description').value;
+            const date = document.getElementById('event-date').value;
+            const time = document.getElementById('event-time').value;
+            const images = document.getElementById('file-input').files;
+            const tags = []; // Collect tags as needed
+
+            // Prepare the image files for upload
+            const imageUrls = [];
+            for (let i = 0; i < images.length; i++) {
+                const imageUrl = await uploadImageToS3(images[i]);
+                imageUrls.push(imageUrl);
+            }
+
+            const event = {
+                title,
+                description,
+                address,
+                dateDescription,
+                date,
+                time,
+                imageUrls,
+                tags
+            };
+
+            try {
+                const response = await fetch('YOUR_API_GATEWAY_ENDPOINT', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(event)
+                });
+
+                if (response.ok) {
+                    alert('Event created successfully!');
+                } else {
+                    alert('Failed to create event.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while creating the event.');
+            }
+        }
+
+        //Functiont to upload image to the backend
+        async function uploadImageToS3(file) {
+            const presignedUrlResponse = await fetch('YOUR_API_GATEWAY_PRESIGNED_URL_ENDPOINT', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const { url, fields } = await presignedUrlResponse.json();
+
+            const formData = new FormData();
+            Object.entries(fields).forEach(([key, value]) => {
+                formData.append(key, value);
+            });
+            formData.append('file', file);
+
+            await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+
+            return url + fields.key;
+        }
     </script>
 </html>
