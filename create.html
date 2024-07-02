@@ -267,7 +267,7 @@
             };
 
             try {
-                const response = await fetch('YOUR_API_GATEWAY_ENDPOINT', {
+                const response = await fetch('arn:aws:execute-api:us-east-1:654654348180:9z3ygyqb5i/*/POST/create-event', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -288,9 +288,9 @@
 
         //Functiont to upload image to the backend
         async function uploadImageToS3(file) {
-            const presignedUrlResponse = await fetch('YOUR_API_GATEWAY_PRESIGNED_URL_ENDPOINT', {
+            const presignedUrlResponse = await fetch('arn:aws:execute-api:us-east-1:654654348180:9z3ygyqb5i/*/GET/presigned-url', {
                 method: 'GET',
-                headers: {
+                headers: {z
                     'Content-Type': 'application/json'
                 }
             });
