@@ -288,7 +288,7 @@
 
         //Functiont to upload image to the backend
         async function uploadImageToS3(file) {
-            const presignedUrlResponse = await fetch('https://9z3ygyqb5i.execute-api.us-east-1.amazonaws.com/prod/create-event' + file.name, {
+            const presignedUrlResponse = await fetch('https://9z3ygyqb5i.execute-api.us-east-1.amazonaws.com/prod/create-event?filename=' + file.name, {
                 method: 'GET',
                 headers: {z
                     'Content-Type': 'application/json'
