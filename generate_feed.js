@@ -31,30 +31,54 @@
             eventList.innerHTML = '';
 
             events.forEach(event => {
+                 
                 //Create a blank event
-                const eventElement = document.createElement('div');
-                eventElement.classList.add('event');
-             
+               const postContainer = document.createElement('div');
+                if(postContainer){
+                     postContainer.class="post";
+                     postContainer.tabIndex=1;
+                }
+
+               //Create post body
+               const postBody = document.createElement('div');
+               if(postBody){
+                    postBody.class="post_body";
+               }
+                 
+               //Add event image
+               const postImage = document.createElement('img')
+               if(postImage){
+                    postImage.src = "https://t3.ftcdn.net/jpg/02/68/55/60/360_F_268556012_c1WBaKFN5rjRxR2eyV33znK4qnYeKZjm.jpg";
+               }
+                 
                 //Add event title
-                const title = document.createElement('h2');
-                title.textContent = event.title;
-
-                //Add event description
-                const description = document.createElement('p');
-                description.textContent = event.description;
-
-                //Add event address
-                const address = document.createElement('p');
-                address.textContent = `Address: ${event.address}`;
-
+                const postTitle = document.createElement('div');
+                postTitle.textContent = event.title;
+                if(postTitle){
+                     postTitle.class="post_title";
+                }
+                
                 //Add event date
-                const date = document.createElement('p');
-                date.textContent = `Date: ${event.date}`;
+                const postDate = document.createElement('p');
+                postDate.textContent = `Date: ${event.date} at ${event.time}`;
+                
+                //Add event description
+                const postDescription = document.createElement('div');
+                description.textContent = event.description;
+                 
+                //Add event address
+                const postAddress = document.createElement('div');
+                postAddress.textContent = `Address: ${event.address}`;
+                if(postAddress){
+                    postAddress.class="post_address";
+                }
 
-                //Add event time
-                const time = document.createElement('p');
-                time.textContent = `Time: ${event.time}`;
-
+                //Add event tag container
+                const postTagContainer = document.createElement('div');
+                if(postTagContainer){
+                    postTagContainer.class="post_tag_display";
+                }
+                 
                 //Add event image
                 const imageContainer = document.createElement('div');
                 imageContainer.classList.add('image-container');
@@ -64,14 +88,16 @@
                     img.alt = event.title;
                     imageContainer.appendChild(img);
                 });
+                 
 
                 //Append event info to the blank event
-                eventElement.appendChild(title);
-                eventElement.appendChild(description);
-                eventElement.appendChild(address);
-                eventElement.appendChild(date);
-                eventElement.appendChild(time);
-                eventElement.appendChild(imageContainer);
+                eventElement.appendChild(postImage);
+                eventElement.appendChild(postBody);
+                postBody.appendChild(postTitle);
+                postBody.appendChild(postDate);
+                postBody.appendChild(postDescription);
+                postBody.appendChild(postAddress);
+                postBody.appendChild(postTagContainer);
 
                 //Append event to the page
                 eventList.appendChild(eventElement);
