@@ -9,15 +9,11 @@
     <title>Denton Event Finder</title>
     
     <link href="style.css" rel="stylesheet">
-    <link href="feed_event.css" rel="stylesheet">
+    <link href="feed.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
     <script src="topbar.js"></script>
-
-    <style>
-    </style>
+    <script src="generate_feed.js"></script>
   </head>
-  
-  
   
   <body>
     <!-- Top Navigation Bar -->
@@ -27,135 +23,56 @@
     <!-- Add links to header dropdown here -->
       <div class="dropdown-content" id="tbDropdown">
         <a href="index.html">Dashboard</a>
-        <a href="events.html">Events</a>
-        <a href="food.html">Food</a>
-        <a href="entertainment.html">Entertainment</a>
-        <a href="clubs.html">Clubs</a>
         <a href="#account">Account</a>
         <a href="#settings">Settings</a>  
         <a href="signup.html">Create Account</a>
         <a href="signin.html">Log In</a>  
       </div>
     </div>
-    <button class = "tb-text-button">Recommended</button>
-    <button class = "tb-text-button">Upcoming</button>
+    <button class = "tb-text-button" onclick="window.location.href='index.html';" >Recommended</button>
     <input type="text" placeholder="Search"></input>
     <button class = "tb-create-button">
           <a href="create.html">+</a>  
     </button>
-  </header>
+   </header>
   
   <!-- Temporary placement of main menu elements, feel free to alter -->
 
   <div class = "dashboard_top">
-   <h1>Upcoming Events</h1>
    <div class = "feed">
-    <div class = "feed_event_mini">
-     <div class = "image_container">
-      <img src="dev/demo/events/000001/0.jpg" alt="Jamiroquai in hat">
-      <a>July 6th 2024</a>
-     </div>
-     <div class = "feed_event_mini_right">
-      <h1>Jamiroquai at Rubber Gloves</h1>
-      <hr>
-      <a>Doors open at 6:00 pm. 30 dollar fee at the door or 20 dollars if ticketed online. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla...</a>
-      <div class = "tag">
-        Jazz
+    <div class="post" tabindex="1">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Jamiroquai_2018_Coachella18W1-157_%2842013516212%29_%28cropped%29.jpg/1200px-Jamiroquai_2018_Coachella18W1-157_%2842013516212%29_%28cropped%29.jpg" alt="Jamiroquai in hat">
+      <div class="post_body">
+        <div class="post_title">Jamiroquai at Rubber Gloves</div>
+        <div class="post_date">August 5th, 2024 at 6:00 pm</div>
+        <div class="post_description">Doors open at 6:00 pm. 30 dollar fee at the door or 20 dollars if ticketed online. </div>
+        <hr>
+        <div class="post_address">411 E Sycamore St, Denton, Texas</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Live Music</div>
+          <div class = "post_tag">Jazz</div>
+          <div class = "post_tag">18+</div>
+          <div class = "post_tag">Acid Funk</div>
+        </div>
       </div>
-     </div>
     </div>
-    
-   </div>
-   <div id="event-list" class="event-list">
-     <!-- This is where the events are going to go -->
-   </div>
+   <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://www.crosstimbersgazette.com/crosstimbersgazette/wp-content/uploads/2017/05/Denton-Community-Market-produce-farmers-market.jpg" alt="Jamiroquai in hat">
+      <div class="post_body">
+        <div class="post_title">Denton Community Market</div>
+        <div class="post_date">August 13th, 2024 at 9:00 am</div>
+        <div class="post_description">Founded in 2009, the Denton Community Market is a 501c3 nonprofit producer-only farmer’s and art market in downtown Denton, Texas. Bring the family and experience the best live music, kids activities, local farms, local artists, food trucks, food vendors, and more! We work to contribute to the vitality, livability, and community spirit of Denton by creating a public gathering space that supports local culture and provides a market to bring together visitors with local artists, craftspeople, farmers, and food producers.
+        </div>
+        <hr>
+        <div class="post_address">317 W Mulberry St, Denton, Texas</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Market</div>
+          <div class = "post_tag">Social</div>
+          <div class = "post_tag">Fresh Produce</div>
+        </div>
+      </div>
   </div>
-  
- </body>
- <!-- Scripts to display the events -->
- <script>
-     //Get access to the API
-     const apiBaseUrl = 'https://9z3ygyqb5i.execute-api.us-east-1.amazonaws.com/prod'; 
-  
-     //Function to get the created events
-     async function fetchEvents() {
-            //Talk to the api and make a GET request
-            try {
-                const response = await fetch(`${apiBaseUrl}/list-events`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                //Display the event if the GET request worked
-                if (response.ok) {
-                    const events = await response.json();
-                    displayEvents(events);
-                } 
-                //Log error it GET request didn't work
-                else {
-                    console.error('Failed to fetch events');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-     }
-
-     //Function to display the events
-     function displayEvents(events) {
-            const eventList = document.getElementById('event-list');
-            eventList.innerHTML = '';
-
-            events.forEach(event => {
-                //Create a blank event
-                const eventElement = document.createElement('div');
-                eventElement.classList.add('event');
-             
-                //Add event title
-                const title = document.createElement('h2');
-                title.textContent = event.title;
-
-                //Add event description
-                const description = document.createElement('p');
-                description.textContent = event.description;
-
-                //Add event address
-                const address = document.createElement('p');
-                address.textContent = `Address: ${event.address}`;
-
-                //Add event date
-                const date = document.createElement('p');
-                date.textContent = `Date: ${event.date}`;
-
-                //Add event time
-                const time = document.createElement('p');
-                time.textContent = `Time: ${event.time}`;
-
-                //Add event image
-                const imageContainer = document.createElement('div');
-                imageContainer.classList.add('image-container');
-                event.imageUrls.forEach(url => {
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.alt = event.title;
-                    imageContainer.appendChild(img);
-                });
-
-                //Append event info to the blank event
-                eventElement.appendChild(title);
-                eventElement.appendChild(description);
-                eventElement.appendChild(address);
-                eventElement.appendChild(date);
-                eventElement.appendChild(time);
-                eventElement.appendChild(imageContainer);
-
-                //Append event to the page
-                eventList.appendChild(eventElement);
-            });
-     }
-
-     //Make sure that fetch events still runs while the page is up
-     document.addEventListener('DOMContentLoaded', fetchEvents);
- </script>
+  </body>
 </html>
 
