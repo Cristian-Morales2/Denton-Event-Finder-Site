@@ -149,11 +149,6 @@
             <input type="text" id="event-address" placeholder="Address">
         </div>
         <div class="form-group">
-            <!-- Event Date Description Text Box -->
-            <label for="event-date-description">Date Description</label>
-            <input type="text" id="event-date-description" placeholder="Date Description">
-        </div>
-        <div class="form-group">
             <!-- Event Date and Time Box -->
             <label for="event-date">Date</label>
             <input type="date" id="event-date">
@@ -231,7 +226,6 @@
             const title = document.getElementById('event-title').value;
             const description = document.getElementById('event-description').value;
             const address = document.getElementById('event-address').value;
-            const dateDescription = document.getElementById('event-date-description').value;
             const date = document.getElementById('event-date').value;
             const time = document.getElementById('event-time').value;
             const images = document.getElementById('file-input').files;
@@ -248,7 +242,6 @@
                 title,
                 description,
                 address,
-                dateDescription,
                 date,
                 time,
                 imageUrls,
