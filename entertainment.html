@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="">
   <head>
     <meta charset="utf-8">
@@ -8,13 +8,12 @@
     <meta name="generator" content="Hugo 0.122.0">
     <title>Denton Event Finder</title>
     
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="feed.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
     <script src="topbar.js"></script>
+    <script src="generate_feed.js"></script>
   </head>
-  
-  
   
   <body>
     <!-- Top Navigation Bar -->
@@ -23,22 +22,111 @@
     <button class = "tb-hamburger-button"  onclick = tbDropToggle()>=</button>
     <!-- Add links to header dropdown here -->
       <div class="dropdown-content" id="tbDropdown">
-        <a href="index.html">Dashboard</a>
-        <a href="food.html">Food</a>
-        <a href="entertainment.html">Entertainment</a>
+        <a href="index.html">All Posts</a>        
+        <a href="entertainment.html">Entertainment</a>        
+        <a href="food.html">Food</a>        
+        <a href="events.html">Events</a>
         <a href="clubs.html">Clubs</a>
+        <hr>
         <a href="#account">Account</a>
         <a href="#settings">Settings</a>  
         <a href="signup.html">Create Account</a>
-        <a href="#Log In">Log In</a>  
+        <a href="signin.html">Log In</a>  
       </div>
     </div>
-    <button class = "tb-text-button">Recommended</button>
-    <button class = "tb-text-button">Upcoming</button>
+    <button class = "tb-text-button" onclick="window.location.href='index.html';" >Recommended</button>
     <input type="text" placeholder="Search"></input>
     <button class = "tb-create-button">
           <a href="create.html">+</a>  
     </button>
    </header>
+  
+  <!-- Temporary placement of main menu elements, feel free to alter -->
+
+  <div class = "dashboard_top">
+   <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Jamiroquai_2018_Coachella18W1-157_%2842013516212%29_%28cropped%29.jpg/1200px-Jamiroquai_2018_Coachella18W1-157_%2842013516212%29_%28cropped%29.jpg" alt="Jamiroquai in hat">
+      <div class="post_body">
+        <div class="post_title">Jamiroquai at Rubber Gloves</div>
+        <div class="post_date">August 5th, 2024 at 6:00 pm</div>
+        <div class="post_description">Doors open at 6:00 pm. 30 dollar fee at the door or 20 dollars if ticketed online. </div>
+        <hr>
+        <div class="post_address">411 E Sycamore St, Denton, Texas</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Live Music</div>
+          <div class = "post_tag">Jazz</div>
+          <div class = "post_tag">18+</div>
+          <div class = "post_tag">Acid Funk</div>
+        </div>
+      </div>
+    </div>
+   <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://www.crosstimbersgazette.com/crosstimbersgazette/wp-content/uploads/2017/05/Denton-Community-Market-produce-farmers-market.jpg" alt="Jamiroquai in hat">
+      <div class="post_body">
+        <div class="post_title">Denton Community Market</div>
+        <div class="post_date">August 13th, 2024 at 9:00 am</div>
+        <div class="post_description">Founded in 2009, the Denton Community Market is a 501c3 nonprofit producer-only farmer’s and art market in downtown Denton, Texas. Bring the family and experience the best live music, kids activities, local farms, local artists, food trucks, food vendors, and more! We work to contribute to the vitality, livability, and community spirit of Denton by creating a public gathering space that supports local culture and provides a market to bring together visitors with local artists, craftspeople, farmers, and food producers.
+        </div>
+        <hr>
+        <div class="post_address">317 W Mulberry St, Denton, Texas</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Market</div>
+          <div class = "post_tag">Social</div>
+          <div class = "post_tag">Fresh Produce</div>
+        </div>
+      </div>
+  </div>
+     <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/denton/2024-07-TheDiveDenton-SupportB_C0AE3912-AD64-DAB3-3F3FE1EBB394010E_c0d476a2-fa4d-6831-ad2a101a4793d0c9.png">
+      <div class="post_body">
+        <div class="post_title">Live Bar Trivia at The Dive</div>
+        <div class="post_date">Wednesdays From 7:00 PM to 9:00 PM</div>
+        <div class="post_description">Come play Geeks Who Drink Small Batch Trivia at The Dive in Denton! Small Batch Trivia is pop-culture heavy and family friendly. </div>
+        <hr>
+        <div class="post_address">3350 Unicorn Lake Blvd, Denton, TX 76210</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Game</div>
+          <div class = "post_tag">Bar</div>
+          <div class = "post_tag">The dive</div>
+        </div>
+      </div>
+    </div>
+       <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/denton/f431fe39-398c-40b6-aacb-c633b3643f67_DDA15C30-5056-BF65-D61003A7DBA1F875_dda92330-5056-bf65-d66de109f69accfd.jpg">
+      <div class="post_body">
+        <div class="post_title">Loteria (Mexican Bingo)</div>
+        <div class="post_date">Wednesdays From 7:00 PM to 9:00 PM</div>
+        <div class="post_description">If you are looking for something fun and different then come play Loteria (it like Mexican Bingo). Prizes given at the end of each game. Just walk in anytime during event and grab a card the speaker will let you know when the next game starts. </div>
+        <hr>
+        <div class="post_address">213 E. Hickory St, Denton, TX 76201</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Game</div>
+          <div class = "post_tag">Family Friendly</div>
+          <div class = "post_tag">Prizes</div>
+        </div>
+      </div>
+    </div>
+       <div class = "feed">
+    <div class="post" tabindex="1">
+     <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_404,q_80,w_534/v1/crm/denton/IMG_9178_A6A1D541-B017-C2A6-FAED10CA2A6E5A46_a6b175d1-0750-1c85-631f74acacc1bd0c.png">
+      <div class="post_body">
+        <div class="post_title">General Trivia at Riprocks Bar & Grill</div>
+        <div class="post_date">Thursdays From 7:30 PM to 9:30 PM</div>
+        <div class="post_description">Riprocks Bar & Grill hosts general trivia every Thursday at 7:30pm! It is 21 and up, but is completely free to play! Players try their hand for bar cash!</div>
+        <hr>
+        <div class="post_address">1211 W. Hickory St., Denton, TX 76205</div>
+        <div class="post_tag_display">
+          <div class = "post_tag">Game</div>
+          <div class = "post_tag">Food</div>
+          <div class = "post_tag">Bar</div>
+          <div class = "post_tag">21+</div>
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
