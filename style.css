@@ -85,14 +85,25 @@ body{
   height:100%;
   margin-left:auto;
 
-  color:#fff;
+  color:#000;
   font-weight:bold;
   font-size:20px;
   
-  background-color: #000000;
+  background-color: #FFF;
   content-adjust:center;
   
   border:none
+}
+
+
+.tb-create-button a:link{
+    color:#000;
+
+}
+
+.tb-create-button a:visited{
+  color:#000;
+
 }
 
 .tb-text-button{
