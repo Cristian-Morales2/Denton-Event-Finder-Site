@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+            background: #181818;
+            color: white;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .settings-group {
+            margin-bottom: 20px;
+        }
+        .setting {
+            margin-bottom: 10px;
+        }
+        .label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .account_creation input{
+                    margin-top:5px;
+                    margin-bottom:10px;
+           			width:200px;
+                }
+        .register_submit{
+            height: 40px;
+            width: 120px;
+                    
+            margin-top:10px;
+            outline:none;
+            border:0;
+                    
+            font-weight:bold;
+            color:white;
+            background:#00A0A0;
+            border-radius:16px;
+        }
+            .register_submit:hover{
+                background:#00C0C0;
+            }
+                .register_submit:active{
+                    background:#005050;
+                }
+    </style>
+</head>
+<body>
+    <h1>User Settings</h1>
+
+    <div class="settings-group">
+        <h2>Account Settings</h2>
+        <div class="setting">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="testing_username123">
+        </div>
+        <div class="setting">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="settings123@testing.com">
+        </div>  
+        <div class="setting">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+        </div>
+    </div>
+    <button type="submit">Save Settings</button>
+</body>
+</html>
+
+ 
